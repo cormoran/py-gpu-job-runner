@@ -2,13 +2,13 @@ import time, datetime, json, os
 import requests
 import pymysql
 from db import JobRepository
-from model import Job, JobStatus
+from model import Job
 
 
 def send_to_slack(url, job: Job):
     data = {
         'text':
-        'ジョブが失敗しました :ghost:',
+        'Job failed :ghost:',
         'attachments': [
             {
                 "title": 'host',
